@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
+@import "tailwindcss";
+
+:root {
+  --primary: #0D0D0D;
+  --secondary: #F5F5F5;
+  --accent: #C8A96A;
+  --background: #1A1A1A;
+}
+
+.light {
+  --primary: #FFFFFF;
+  --secondary: #0D0D0D;
+  --accent: #8B7355;
+  --background: #F9F9F9;
+}
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Playfair Display", ui-serif, Georgia, serif;
+  
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
+  --color-accent: var(--accent);
+  --color-background: var(--background);
+}
+
+@layer base {
+  body {
+    @apply bg-background text-secondary font-sans antialiased transition-colors duration-500;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif;
+  }
+}
+
+.text-gold {
+  color: var(--accent);
+}
+
+.bg-gold {
+  background-color: var(--accent);
+}
+
+.border-gold {
+  border-color: var(--accent);
+}
+
+.luxury-gradient {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--background) 100%);
+}
+
+.gold-gradient {
+  background: linear-gradient(135deg, var(--accent) 0%, #E2C08D 100%);
+}
+
+.glass-card {
+  @apply bg-white/5 backdrop-blur-md border border-white/10;
+}
+
+.light .glass-card {
+  @apply bg-black/5 border-black/10;
+}
+
+.imgLogo{
+  width: 180px;
+  height: 150px;
+  color: white;
+  /* border:2px solid white */
+}
+.imgLogo1{
+  width: 250px;
+  height: 200px;
+  color: white;
+  /* border:2px solid white */
+}
