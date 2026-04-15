@@ -28,7 +28,7 @@ const Footer = () => {
             <a href="https://www.facebook.com/asquarestudioindia" className="w-10 h-10 rounded-full border border-secondary/10 flex items-center justify-center hover:bg-gold hover:text-primary transition-all duration-300">
               <Facebook size={18} />
             </a>
-            <a href="https://www.linkedin.com/in/a-square-studio-62870435b/" className="w-10 h-10 rounded-full border border-secondary/10 flex items-center justify-center hover:bg-gold hover:text-primary transition-all duration-300">
+            <a href="https://linkedin.com/company/a-square-studio" className="w-10 h-10 rounded-full border border-secondary/10 flex items-center justify-center hover:bg-gold hover:text-primary transition-all duration-300">
               <Linkedin size={18} />
             </a>
           </div>
