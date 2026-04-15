@@ -10,7 +10,7 @@ import studioVideo from "../assets/Architect Motion.mp4";
 
 const Home = () => {
   return (
-    <div className="bg-background">
+    <div className="bg-background homepage">
       {/* Hero Section */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
@@ -80,7 +80,7 @@ const Home = () => {
           transition={{ duration: 1, delay: 1.5 }}
           className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-4"
         >
-          <span className="text-secondary/40 text-[10px] uppercase tracking-[0.3em] vertical-text mb-4">Scroll</span>
+          {/* <span className="text-secondary/40 text-[10px] uppercase tracking-[0.3em] vertical-text mb-4">Scroll</span> */}
           <div className="w-[1px] h-12 bg-gradient-to-b from-gold to-transparent" />
         </motion.div>
       </section>
@@ -291,7 +291,7 @@ const Home = () => {
             </p>
             <Link
               to="/contact"
-              className="bg-primary text-white px-12 py-5 text-sm uppercase tracking-widest font-bold hover:bg-white hover:text-primary transition-all duration-500 inline-block"
+              className="bg-primary text-beige px-12 py-5 text-sm uppercase tracking-widest font-bold hover:bg-white hover:text-primary transition-all duration-500 inline-block"
             >
               Start a Conversation
             </Link>

@@ -75,3 +75,21 @@
   color: white;
   /* border:2px solid white */
 }
+
+@media screen and (max-width:500px){
+  .imgLogo{
+  width: 100px;
+  height: 80px;
+  color: white;
+  /* border:2px solid white */
+}
+.imgLogo1{
+  width: 130px;
+  height: 100px;
+  color: white;
+  /* border:2px solid white */
+}
+.homepage{
+  margin-top: 50px;
+}
+}
