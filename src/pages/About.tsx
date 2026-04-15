@@ -2,8 +2,7 @@ import React from 'react';
 import { motion } from 'motion/react';
 import { CheckCircle2, Users, Target, Eye, Award } from 'lucide-react';
 import SectionHeading from '../components/SectionHeading';
-import Amit from '../assets/Amit.png';
-import Aditi from '../assets/Ar.Aditi Saxena.png';
+
 
 
 const About = () => {
