@@ -2,6 +2,8 @@ import React from 'react';
 import { motion } from 'motion/react';
 import { CheckCircle2, Users, Target, Eye, Award } from 'lucide-react';
 import SectionHeading from '../components/SectionHeading';
+import AmitImg from "../assets/Amit.png";
+import AditiImg from "../assets/Ar.Aditi-Saxena.png";
 
 
 
@@ -14,8 +16,8 @@ const About = () => {
   ];
 
   const team = [
-    { name: 'Amit Singh Rathore ', role: 'Business owner', image: '/src/assets/Amit.png' },
-    { name: 'Ar. Aditi Saxena', role: 'Principal Architect', image: '/src/assets/Ar.Aditi Saxena.png' },
+    { name: 'Amit Singh Rathore ', role: 'Business owner', image: AmitImg },
+    { name: 'Ar. Aditi Saxena', role: 'Principal Architect', image: AditiImg },
     { name: 'Vikram Singh', role: 'Project Manager', image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=800' },
   ];
 
