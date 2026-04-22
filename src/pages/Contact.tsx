@@ -68,7 +68,7 @@ const Contact = () => {
                 </div>
                 <div className="flex flex-col">
                   <span className="text-secondary/40 text-[10px] uppercase tracking-widest mb-1">Email Us</span>
-                  <span className="text-secondary text-lg font-serif">asquareamith@gmail.com</span>
+                  <span className="text-secondary text-lg font-serif">info@asquarestudios.com</span>
                 </div>
               </div>
             </div>

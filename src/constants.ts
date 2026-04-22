@@ -1,4 +1,7 @@
 import { Project, Service, Testimonial, BlogPost } from './types';
+import akash_apartment from '../src/assets/Akash_apartment.jpg'
+import EXL from '../src/assets/EXL.jpg'
+import Anaisha_Girls_hostel from '../src/assets/Anaisha_Girls_hostel.png'
 
 export const PROJECTS: Project[] = [
   {
@@ -6,10 +9,10 @@ export const PROJECTS: Project[] = [
     name: 'Akash Appartment',
     location: 'DLF Phase 3, Gurugram',
     type: 'Residential',
-    image: 'https://images.unsplash.com/photo-1600585154340-be6199f7a096?auto=format&fit=crop&q=80&w=1200',
+    image: akash_apartment,
     description: 'A luxurious 5-bedroom villa that blends modern minimalism with traditional Indian elements. The design focuses on open spaces and natural light.',
     areaSize: '4,500 sq. ft.',
-    year: '2023',
+    year: '2022',
     materials: ['Italian Marble', 'Teak Wood', 'Brass Accents', 'Glass'],
     gallery: [
       'https://images.unsplash.com/photo-1600585154340-be6199f7a096?auto=format&fit=crop&q=80&w=1200',
@@ -22,10 +25,10 @@ export const PROJECTS: Project[] = [
     name: 'IT Comapany',
     location: 'Noida, Delhi NCR',
     type: 'Corporate Interior',
-    image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=1200',
+    image: EXL,
     description: 'A state-of-the-art office space designed for a tech giant. The project emphasizes ergonomic design and collaborative work environments.',
     areaSize: '12,000 sq. ft.',
-    year: '2022',
+    year: '2025',
     materials: ['Exposed Concrete', 'Steel', 'Acoustic Panels', 'LED Lighting'],
     gallery: [
       'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=1200',
@@ -52,10 +55,10 @@ export const PROJECTS: Project[] = [
     name: 'Anaisha Girls Hostel',
     location: 'Gwalior',
     type: 'Renovation',
-    image: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=1200',
+    image: Anaisha_Girls_hostel,
     description: 'Restoration of a colonial-era bungalow. We preserved the original architecture while integrating modern amenities and structural reinforcements.',
-    areaSize: '3,200 sq. ft.',
-    year: '2023',
+    areaSize: '1,500 sq. ft.',
+    year: '2021',
     materials: ['Lime Plaster', 'Reclaimed Wood', 'Terracotta', 'Wrought Iron'],
     gallery: [
       'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=1200',
