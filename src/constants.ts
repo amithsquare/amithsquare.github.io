@@ -73,35 +73,66 @@ export const SERVICES: Service[] = [
     title: 'Architectural Design',
     description: 'Innovative planning and execution for residential and commercial spaces that blend form and function.',
     icon: 'Home',
-    image: 'https://images.unsplash.com/photo-1487958449943-2429e8be8625?auto=format&fit=crop&q=80&w=800'
+    image: 'https://images.unsplash.com/photo-1487958449943-2429e8be8625?auto=format&fit=crop&q=80&w=800',
+    features: [
+      'Concept Design',
+      'Schematic Design',
+      'Design Development',
+      'Construcation Documentation'
+    ]
   },
   {
     id: '2',
     title: 'Interior Design',
     description: 'Bespoke interior solutions that reflect your personality and optimize every inch of your space.',
     icon: 'Layout',
-    image: 'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&q=80&w=800'
+    image: 'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&q=80&w=800',
+    features: [
+      'Corporate Interior',
+      'Commercial Interior',
+      'Residential interior',
+      'Health Care Interior'
+
+    ]
   },
   {
     id: '3',
     title: 'Turnkey Projects',
     description: 'End-to-end design and build solutions, taking the stress out of your construction journey.',
     icon: 'Key',
-    image: 'https://images.unsplash.com/photo-1503387762-592dee58c460?auto=format&fit=crop&q=80&w=800'
+    image: 'https://images.unsplash.com/photo-1503387762-592dee58c460?auto=format&fit=crop&q=80&w=800',
+    features: [
+      'Architectural & Design Services',
+      'Project Planning & Feasibility',
+      'Approvals & Permissions',
+      'Construction Execution'
+    ]
   },
   {
     id: '4',
     title: '3D Visualization',
     description: 'Realistic 3D renderings and walkthroughs to help you visualize your dream space before it is built.',
     icon: 'Box',
-    image: 'https://images.unsplash.com/photo-1545670723-196ed0954986?auto=format&fit=crop&q=80&w=800'
+    image: 'https://images.unsplash.com/photo-1545670723-196ed0954986?auto=format&fit=crop&q=80&w=800',
+    features: [
+      '3D Modeling and Photorealistic Rendering',
+      'Concept Visualization',
+      'Interior Visualization',
+      'Exterior Visualization'
+    ]
   },
   {
     id: '5',
     title: 'Renovation & Remodeling',
     description: 'Modern transformation of existing spaces, giving them a new lease on life with premium finishes.',
     icon: 'RefreshCw',
-    image: 'https://images.unsplash.com/photo-1581858726788-75bc0f6a952d?auto=format&fit=crop&q=80&w=800'
+    image: 'https://images.unsplash.com/photo-1581858726788-75bc0f6a952d?auto=format&fit=crop&q=80&w=800',
+    features: [
+      'Complete Home Renovation',
+      'Kitchen Remodeling',
+      'Office & Commercial Renovation',
+      'Premium Bathroom Renovation'
+    ]
   }
 ];
 

@@ -17,6 +17,7 @@ export interface Service {
   description: string;
   icon: string;
   image: string;
+  features: string[]; 
 }
 
 export interface Testimonial {
