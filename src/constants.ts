@@ -152,7 +152,7 @@ export const TESTIMONIALS: Testimonial[] = [
   {
     id: '3',
     name: 'Dharmendra Gujjar',
-    role: 'Akash apartment',
+    role: 'Akash apartment Real Estate Developer',
     content: 'Working with them on our luxurious apartment Gurugram Phase 3 project was a breeze. They understand the premium market perfectly.'
   }
 ];
