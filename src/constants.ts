@@ -141,7 +141,7 @@ export const TESTIMONIALS: Testimonial[] = [
     id: '1',
     name: 'Shyamla',
     role: 'Homeowner',
-    content: 'A Square Studio transformed our vision into a reality. Their attention to detail and commitment to quality is unmatched in New Delhi.'
+    content: 'A Square Studio transformed our vision into a reality. Their attention to detail and commitment to quality is unmatched in Gwalior.'
   },
   {
     id: '2',
@@ -153,7 +153,7 @@ export const TESTIMONIALS: Testimonial[] = [
     id: '3',
     name: 'Dharmendra Gujjar',
     role: 'Akash apartment',
-    content: 'Working with them on our luxury apartment project was a breeze. They understand the premium market perfectly.'
+    content: 'Working with them on our luxurious apartment Gurugram Phase 3 project was a breeze. They understand the premium market perfectly.'
   }
 ];
 
