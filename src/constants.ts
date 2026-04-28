@@ -139,20 +139,20 @@ export const SERVICES: Service[] = [
 export const TESTIMONIALS: Testimonial[] = [
   {
     id: '1',
-    name: 'Rajesh Khanna',
+    name: 'Shyamla',
     role: 'Homeowner',
     content: 'A Square Studio transformed our vision into a reality. Their attention to detail and commitment to quality is unmatched in New Delhi.'
   },
   {
     id: '2',
-    name: 'Priya Sharma',
-    role: 'CEO, TechNova',
+    name: 'Ashish Mittal',
+    role: 'Director',
     content: 'The workspace designed by A Square Studio has significantly improved our team productivity. It is modern, functional, and beautiful.'
   },
   {
     id: '3',
-    name: 'Amitabh Singh',
-    role: 'Real Estate Developer',
+    name: 'Dharmendra Gujjar',
+    role: 'Akash apartment',
     content: 'Working with them on our luxury apartment project was a breeze. They understand the premium market perfectly.'
   }
 ];
@@ -192,6 +192,6 @@ export const FAQS = [
   },
   {
     question: 'Do you provide turnkey services?',
-    answer: 'Yes, we offer end-to-end turnkey solutions where we manage everything from design to procurement and construction.'
+    answer: 'Yes, we offer end-to-end turnkey solutions where we manage everything from design to procurement and construction and Had over the Master Key'
   }
 ];
