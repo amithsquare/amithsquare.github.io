@@ -3,6 +3,7 @@ import { motion } from 'motion/react';
 import { Calendar, User, ArrowRight } from 'lucide-react';
 import SectionHeading from '../components/SectionHeading';
 import { BLOG_POSTS } from '../constants';
+import { Link } from 'react-router-dom';
 
 const Blog = () => {
   return (
@@ -59,9 +60,15 @@ const Blog = () => {
                 {post.excerpt}
               </p>
               
-              <button className="flex items-center gap-2 text-gold text-xs uppercase tracking-widest font-bold group-hover:gap-4 transition-all duration-300">
+              {/* <button className="flex items-center gap-2 text-gold text-xs uppercase tracking-widest font-bold group-hover:gap-4 transition-all duration-300">
                 Read More <ArrowRight size={14} />
-              </button>
+              </button> */}
+              <Link
+                to="https://www.linkedin.com/company/114394124/admin/page-posts/published/"
+                className="flex items-center gap-2 text-secondary/40 text-[10px] uppercase tracking-widest font-bold group-hover:text-gold transition-colors duration-300"
+              >
+                Read More <ArrowRight size={12} />
+              </Link>
             </motion.div>
           ))}
         </div>

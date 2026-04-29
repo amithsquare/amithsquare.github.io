@@ -262,7 +262,7 @@ const Home = () => {
                 {post.title}
               </h3>
               <Link
-                to="/blog"
+                to="https://www.linkedin.com/company/114394124/admin/page-posts/published/"
                 className="flex items-center gap-2 text-secondary/40 text-[10px] uppercase tracking-widest font-bold group-hover:text-gold transition-colors duration-300"
               >
                 Read More <ArrowRight size={12} />
