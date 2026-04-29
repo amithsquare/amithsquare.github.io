@@ -6,7 +6,7 @@ import { SERVICES } from '../constants';
 const Services = () => {
   return (
     <div className="pt-32 bg-background">
-      
+
       {/* Hero */}
       <section className="px-6 md:px-12 max-w-7xl mx-auto mb-32 mt-18">
         <SectionHeading
@@ -36,60 +36,60 @@ const Services = () => {
 
               {/* Image */}
               <div className={index % 2 !== 0 ? 'lg:order-2' : ''}>
-                <div className="aspect-video overflow-hidden relative">
+                <div className="aspect-video overflow-hidden relative group">
 
                   <img
                     src={service.image}
                     alt={service.title}
-                    className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-1000"
-                  />
+                    className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-1000"/>
 
-                  <div className="absolute inset-0 border border-secondary/10 hover:border-gold/30 transition-colors duration-500" />
+                  <div className="absolute inset-0 border border-secondary/10 group-hover:border-gold/30 transition-colors duration-500" />
 
                 </div>
-              </div>
+                </div>
 
-              {/* Content */}
-              <div className={index % 2 !== 0 ? 'lg:order-1' : ''}>
 
-                <span className="text-gold text-xs uppercase tracking-[0.4em] font-sans block mb-6">
-                  Service 0{index + 1}
-                </span>
+                {/* Content */}
+                <div className={index % 2 !== 0 ? 'lg:order-1' : ''}>
 
-                <h3 className="text-secondary text-4xl md:text-5xl font-serif font-medium mb-8">
-                  {service.title}
-                </h3>
+                  <span className="text-gold text-xs uppercase tracking-[0.4em] font-sans block mb-6">
+                    Service 0{index + 1}
+                  </span>
 
-                <p className="text-secondary/60 text-lg leading-relaxed mb-12">
-                  {service.description}
-                </p>
+                  <h3 className="text-secondary text-4xl md:text-5xl font-serif font-medium mb-8">
+                    {service.title}
+                  </h3>
 
-                {/* ✅ FIXED FEATURES LIST */}
+                  <p className="text-secondary/60 text-lg leading-relaxed mb-12">
+                    {service.description}
+                  </p>
 
-                <ul className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+                  {/* ✅ FIXED FEATURES LIST */}
 
-                  {service.features.map((feature, i) => (
+                  <ul className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
 
-                    <li
-                      key={i}
-                      className="flex items-center gap-3 text-secondary/80 text-sm"
-                    >
+                    {service.features.map((feature, i) => (
 
-                      <div className="w-2 h-2 bg-gold rounded-full" />
+                      <li
+                        key={i}
+                        className="flex items-center gap-3 text-secondary/80 text-sm"
+                      >
 
-                      {feature}
+                        <div className="w-2 h-2 bg-gold rounded-full" />
 
-                    </li>
+                        {feature}
 
-                  ))}
+                      </li>
 
-                </ul>
+                    ))}
 
-                <button className="bg-gold text-primary px-10 py-4 text-xs uppercase tracking-widest font-bold hover:bg-secondary transition-all duration-300">
-                  Inquire Now
-                </button>
+                  </ul>
 
-              </div>
+                  <button className="bg-gold text-primary px-10 py-4 text-xs uppercase tracking-widest font-bold hover:bg-secondary transition-all duration-300">
+                    Inquire Now
+                  </button>
+
+                </div>
 
             </motion.div>
 

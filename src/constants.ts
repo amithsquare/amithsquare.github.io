@@ -100,7 +100,7 @@ export const SERVICES: Service[] = [
     title: 'Turnkey Projects',
     description: 'End-to-end design and build solutions, taking the stress out of your construction journey.',
     icon: 'Key',
-    image: 'https://images.unsplash.com/photo-1503387762-592dee58c460?auto=format&fit=crop&q=80&w=800',
+    image: 'https://lh3.googleusercontent.com/ZsPjO4Le9r1ZkHoipK_6OT2jM05JLSwNKMCgp_PtoePJzzhbtw8vTRsUPif5daTDDXHj1n--O6ezqVafLg=w1521',
     features: [
       'Architectural & Design Services',
       'Project Planning & Feasibility',
@@ -113,7 +113,7 @@ export const SERVICES: Service[] = [
     title: '3D Visualization',
     description: 'Realistic 3D renderings and walkthroughs to help you visualize your dream space before it is built.',
     icon: 'Box',
-    image: 'https://images.unsplash.com/photo-1545670723-196ed0954986?auto=format&fit=crop&q=80&w=800',
+    image: 'https://lh3.googleusercontent.com/bpvAt5RWgu2JJ1YbHJWkjwB8C-bIXwNVi6wkhs3bS52u96h02w2fpiTs86z8H6Frn7FpQKzOnFsnU5vMBw=w1521',
     features: [
       '3D Modeling and Photorealistic Rendering',
       'Concept Visualization',
@@ -126,7 +126,7 @@ export const SERVICES: Service[] = [
     title: 'Renovation & Remodeling',
     description: 'Modern transformation of existing spaces, giving them a new lease on life with premium finishes.',
     icon: 'RefreshCw',
-    image: 'https://images.unsplash.com/photo-1581858726788-75bc0f6a952d?auto=format&fit=crop&q=80&w=800',
+    image: 'https://lh3.googleusercontent.com/VQZhaleiaHh1MjXiqq9lS6hjrg0kbB9HnzGq4JePdbKhQ8A7vdlnyQBwlXRjdd1BV_ftYC_kB4UMxsLvKQ=w1521',
     features: [
       'Complete Home Renovation',
       'Kitchen Remodeling',
