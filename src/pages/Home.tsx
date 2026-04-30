@@ -7,6 +7,8 @@ import ProjectCard from '../components/ProjectCard';
 import ServiceCard from '../components/ServiceCard';
 import { PROJECTS, SERVICES, TESTIMONIALS, BLOG_POSTS } from '../constants';
 import studioVideo from "../assets/Architect Motion.mp4";
+// import studioVideo from "../assets/A Square Studio Ad 15 Sec.mp4";
+
 
 const Home = () => {
   return (
@@ -262,7 +264,7 @@ const Home = () => {
                 {post.title}
               </h3>
               <Link
-                to="https://www.linkedin.com/company/114394124/admin/page-posts/published/"
+                to="https://www.linkedin.com/pulse/architecture-design-north-india-2026-tradition-meets-intelligent-rl0pc"
                 className="flex items-center gap-2 text-secondary/40 text-[10px] uppercase tracking-widest font-bold group-hover:text-gold transition-colors duration-300"
               >
                 Read More <ArrowRight size={12} />

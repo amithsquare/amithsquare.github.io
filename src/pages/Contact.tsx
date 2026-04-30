@@ -115,7 +115,7 @@ const Contact = () => {
                   onChange={handleChange}
                   required
                   className="bg-transparent border-b border-secondary/20 py-4 text-secondary focus:border-gold outline-none transition-colors"
-                  placeholder="John Doe"
+                  placeholder="Hiren patel"
                 />
               </div>
               <div className="flex flex-col gap-2">
@@ -127,7 +127,7 @@ const Contact = () => {
                   onChange={handleChange}
                   required
                   className="bg-transparent border-b border-secondary/20 py-4 text-secondary focus:border-gold outline-none transition-colors"
-                  placeholder="john@example.com"
+                  placeholder="info@asquarestudios.com"
                 />
               </div>
               <div className="flex flex-col gap-2 md:col-span-2">
@@ -170,7 +170,7 @@ const Contact = () => {
       <section className="h-[500px] w-full bg-primary/50 relative overflow-hidden">
   <div className="absolute inset-0 grayscale opacity-40">
     <img 
-      src="/src/assets/Location.png" 
+      src="/src/assets/A_Square_Studio_Map_Placeholder.png" 
       alt="Map Placeholder" 
       className="w-full h-full object-cover"
     />
@@ -194,7 +194,7 @@ const Contact = () => {
       </div>
     </a>
 
-    <h4 className="text-secondary text-2xl font-serif mb-2">
+    <h4 className="text-secondary text-3xl font-serif mb-2">
       Our Gwalior Office
     </h4>
 

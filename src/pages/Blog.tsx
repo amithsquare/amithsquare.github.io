@@ -64,7 +64,7 @@ const Blog = () => {
                 Read More <ArrowRight size={14} />
               </button> */}
               <Link
-                to="https://www.linkedin.com/company/114394124/admin/page-posts/published/"
+                to="https://www.linkedin.com/posts/a-square-studio_asquarestudio-architecturedesign-interiordesign-activity-7455199229955715072-26Ak?utm_source=share&utm_medium=member_desktop&rcm=ACoAAB6Wv8wBWwAHTr6n_kHN-3qO3unxKsh8nzU"
                 className="flex items-center gap-2 text-secondary/40 text-[10px] uppercase tracking-widest font-bold group-hover:text-gold transition-colors duration-300"
               >
                 Read More <ArrowRight size={12} />
