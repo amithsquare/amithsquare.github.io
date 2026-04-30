@@ -59,7 +59,7 @@ const Contact = () => {
                 </div>
                 <div className="flex flex-col">
                   <span className="text-secondary/40 text-[10px] uppercase tracking-widest mb-1">Call Us</span>
-                  <span className="text-secondary text-lg font-serif">+91-7000441294</span>
+                  <span className="text-secondary text-lg font-serif">+91-9667641294</span>
                 </div>
               </div>
               <div className="flex items-start gap-6 group">
@@ -93,7 +93,7 @@ const Contact = () => {
             
             {/* WhatsApp Integration */}
             <a 
-              href="https://wa.me/917000441294" 
+              href="https://wa.me/919667241294" 
               target="_blank" 
               rel="noopener noreferrer"
               className="mt-8 bg-[#25D366] text-white px-8 py-4 text-xs uppercase tracking-widest font-bold hover:opacity-90 transition-all duration-300 flex items-center justify-center gap-3"
