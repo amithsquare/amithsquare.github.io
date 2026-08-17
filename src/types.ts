@@ -2,7 +2,12 @@ export interface Project {
   id: string;
   name: string;
   location: string;
-  type: 'Residential' | 'Commercial' | 'Interior' | 'Renovation';
+  type:
+    | "Residential"
+    | "Commercial"
+    | "Interior"
+    | "Renovation"
+    | "Corporate Interior";
   image: string;
   description: string;
   areaSize: string;
@@ -17,7 +22,7 @@ export interface Service {
   description: string;
   icon: string;
   image: string;
-  features: string[]; 
+  features: string[];
 }
 
 export interface Testimonial {

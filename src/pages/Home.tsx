@@ -1,26 +1,66 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { motion } from 'motion/react';
-import { ArrowRight, Play, Quote } from 'lucide-react';
-import SectionHeading from '../components/SectionHeading';
-import ProjectCard from '../components/ProjectCard';
-import ServiceCard from '../components/ServiceCard';
-import { PROJECTS, SERVICES, TESTIMONIALS, BLOG_POSTS } from '../constants';
+import { ArrowRight, Quote } from "lucide-react";
+import { motion } from "motion/react";
+import { Helmet } from "react-helmet-async";
+import { Link } from "react-router-dom";
 import studioVideo from "../assets/Architect Motion.mp4";
+import ProjectCard from "../components/ProjectCard";
+import SectionHeading from "../components/SectionHeading";
+import ServiceCard from "../components/ServiceCard";
+import { BLOG_POSTS, PROJECTS, SERVICES, TESTIMONIALS } from "../constants";
 // import studioVideo from "../assets/A Square Studio Ad 15 Sec.mp4";
-
 
 const Home = () => {
   return (
-    <div className="bg-background homepage">
+    <div className="bg-background homepage w-full min-w-0">
+      <Helmet>
+        <title>
+          A Square Studio | Architecture & Interior Design in New Delhi, Gwalior
+          & Indore
+        </title>
+        <meta
+          name="description"
+          content="A Square Studio delivers innovative architectural and interior design solutions across New Delhi, Gwalior & Indore - blending creativity, functionality, and elegance."
+        />
+        <meta
+          property="og:title"
+          content="A Square Studio | Architecture & Interior Design"
+        />
+        <meta
+          property="og:description"
+          content="Innovative architectural and interior design solutions across New Delhi, Gwalior & Indore."
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://asquarestudios.com/" />
+        <meta
+          property="og:image"
+          content="https://asquarestudios.com/og-image.jpg"
+        />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:title"
+          content="A Square Studio | Architecture & Interior Design"
+        />
+        <meta
+          name="twitter:description"
+          content="Innovative architectural and interior design solutions across New Delhi, Gwalior & Indore."
+        />
+        <meta
+          name="twitter:image"
+          content="https://asquarestudios.com/og-image.jpg"
+        />
+        <link rel="canonical" href="https://asquarestudios.com/" />
+      </Helmet>
       {/* Hero Section */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden">
+      <section className="relative h-screen w-full flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img
             src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=1920"
             alt="Modern Architecture"
             referrerPolicy="no-referrer"
             className="w-full h-full object-cover opacity-40 scale-105 animate-slow-zoom"
+            loading="lazy"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-primary/80 via-primary/40 to-primary" />
         </div>
@@ -30,11 +70,11 @@ const Home = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-gold text-xs md:text-sm uppercase tracking-[0.5em] font-sans block mb-6 mt-18"
+            className="text-gold text-xs md:text-sm uppercase tracking-[0.5em] font-sans block mb-6 mt-24 md:mt-18"
           >
-            A Square Studio | New Delhi | Gwalior | Indore 
+            A Square Studio | New Delhi | Gwalior | Indore
           </motion.span>
-          
+
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -44,16 +84,17 @@ const Home = () => {
             Designing Spaces <br />
             <span className="italic text-gold">That Inspire Living</span>
           </motion.h1>
-          
+
           <motion.p
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.6 }}
             className="text-secondary/70 text-base md:text-lg max-w-2xl mx-auto mb-12 leading-relaxed"
           >
-            A Square Studio delivers innovative architectural and interior solutions that blend creativity, functionality, and elegance.
+            A Square Studio delivers innovative architectural and interior
+            solutions that blend creativity, functionality, and elegance.
           </motion.p>
-          
+
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -64,7 +105,11 @@ const Home = () => {
               to="/projects"
               className="bg-gold text-primary px-10 py-4 text-xs uppercase tracking-widest font-bold hover:bg-secondary transition-all duration-300 flex items-center gap-3 group"
             >
-              View Projects <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+              View Projects{" "}
+              <ArrowRight
+                size={16}
+                className="group-hover:translate-x-1 transition-transform"
+              />
             </Link>
             <Link
               to="/contact"
@@ -82,14 +127,13 @@ const Home = () => {
           transition={{ duration: 1, delay: 1.5 }}
           className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-4"
         >
-          {/* <span className="text-secondary/40 text-[10px] uppercase tracking-[0.3em] vertical-text mb-4">Scroll</span> */}
           <div className="w-[1px] h-12 bg-gradient-to-b from-gold to-transparent" />
         </motion.div>
       </section>
 
       {/* About Preview */}
-      <section className="py-32 px-6 md:px-12 max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+      <section className="py-16 md:py-32 px-6 md:px-12 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-20 items-center">
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -98,15 +142,15 @@ const Home = () => {
             className="relative"
           >
             <div className="aspect-[4/5] overflow-hidden">
-  <video
-    src={studioVideo}
-    autoPlay
-    loop
-    muted
-    playsInline
-    className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-1000"
-  />
-</div>
+              <video
+                src={studioVideo}
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-1000"
+              />
+            </div>
             <div className="absolute -bottom-10 -right-10 w-64 h-64 bg-gold/10 backdrop-blur-xl border border-gold/20 p-8 hidden md:flex flex-col justify-center">
               <span className="text-gold text-4xl font-serif mb-2">10+</span>
               <span className="text-secondary/60 text-xs uppercase tracking-widest leading-relaxed">
@@ -126,30 +170,32 @@ const Home = () => {
               title="Crafting Timeless Architectural Masterpieces"
             />
             <p className="text-secondary/60 text-lg leading-relaxed mb-8">
-              At A Square Studio, we believe that architecture is more than just building structures; it's about creating experiences. Our approach combines modern aesthetics with functional precision to deliver spaces that are both beautiful and practical.
+              At A Square Studio, we believe that architecture is more than just
+              building structures; it's about creating experiences. Our approach
+              combines modern aesthetics with functional precision to deliver
+              spaces that are both beautiful and practical.
             </p>
             <p className="text-secondary/60 text-lg leading-relaxed mb-12">
-              Based in the heart of Madhya Pradesh,Gwalior Smartcity. 
-              We draw inspiration from the city's rich heritage while embracing global design trends to create unique solutions for our clients.
+              Based in the heart of Madhya Pradesh,Gwalior Smartcity. We draw
+              inspiration from the city's rich heritage while embracing global
+              design trends to create unique solutions for our clients.
             </p>
             <Link
               to="/about"
               className="inline-flex items-center gap-4 text-gold text-sm uppercase tracking-widest font-bold group"
             >
-              Discover Our Story <div className="w-12 h-[1px] bg-gold group-hover:w-20 transition-all duration-500" />
+              Discover Our Story{" "}
+              <div className="w-12 h-[1px] bg-gold group-hover:w-20 transition-all duration-500" />
             </Link>
           </motion.div>
         </div>
       </section>
 
       {/* Featured Projects */}
-      <section className="py-32 bg-primary/30">
+      <section className="py-16 md:py-32 bg-primary/30">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
-          <div className="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
-            <SectionHeading
-              subtitle="Portfolio"
-              title="Featured Works"
-            />
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-10 md:mb-20 gap-4 md:gap-8">
+            <SectionHeading subtitle="Portfolio" title="Featured Works" />
             <Link
               to="/projects"
               className="text-secondary/60 hover:text-gold text-xs uppercase tracking-widest font-bold mb-4 flex items-center gap-2 transition-colors"
@@ -167,7 +213,7 @@ const Home = () => {
       </section>
 
       {/* Services Overview */}
-      <section className="py-32 px-6 md:px-12 max-w-7xl mx-auto">
+      <section className="py-16 md:py-32 px-6 md:px-12 max-w-7xl mx-auto">
         <SectionHeading
           subtitle="Expertise"
           title="Our Specialized Services"
@@ -178,7 +224,7 @@ const Home = () => {
             <ServiceCard key={service.id} service={service} index={index} />
           ))}
         </div>
-        <div className="mt-16 text-center">
+        <div className="mt-8 md:mt-16 text-center">
           <Link
             to="/services"
             className="bg-secondary/5 border border-secondary/10 text-secondary px-12 py-4 text-xs uppercase tracking-widest font-bold hover:bg-gold hover:text-primary transition-all duration-500 inline-block"
@@ -189,19 +235,21 @@ const Home = () => {
       </section>
 
       {/* Testimonials */}
-      <section className="py-32 bg-primary/50 relative overflow-hidden">
+      <section className="py-16 md:py-32 bg-primary/50 relative overflow-hidden">
         <div className="absolute top-0 left-0 w-full h-full opacity-5 pointer-events-none">
-          <div className="absolute top-20 left-20 text-[20rem] font-serif text-secondary leading-none">"</div>
+          <div className="hidden md:block absolute top-20 left-20 text-[20rem] font-serif text-secondary leading-none">
+            "
+          </div>
         </div>
-        
+
         <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
           <SectionHeading
             subtitle="Testimonials"
             title="What Our Clients Say"
             centered
           />
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {TESTIMONIALS.map((testimonial, index) => (
               <motion.div
                 key={testimonial.id}
@@ -216,8 +264,12 @@ const Home = () => {
                   "{testimonial.content}"
                 </p>
                 <div className="flex flex-col">
-                  <span className="text-secondary font-serif text-xl">{testimonial.name}</span>
-                  <span className="text-gold text-xs uppercase tracking-widest mt-1">{testimonial.role}</span>
+                  <span className="text-secondary font-serif text-xl">
+                    {testimonial.name}
+                  </span>
+                  <span className="text-gold text-xs uppercase tracking-widest mt-1">
+                    {testimonial.role}
+                  </span>
                 </div>
               </motion.div>
             ))}
@@ -226,12 +278,9 @@ const Home = () => {
       </section>
 
       {/* Blog Preview */}
-      <section className="py-32 px-6 md:px-12 max-w-7xl mx-auto">
-        <div className="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
-          <SectionHeading
-            subtitle="Journal"
-            title="Latest from Blog"
-          />
+      <section className="py-16 md:py-32 px-6 md:px-12 max-w-7xl mx-auto">
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-10 md:mb-20 gap-4 md:gap-8">
+          <SectionHeading subtitle="Journal" title="Latest from Blog" />
           <Link
             to="/blog"
             className="text-secondary/60 hover:text-gold text-xs uppercase tracking-widest font-bold mb-4 flex items-center gap-2 transition-colors"
@@ -240,7 +289,7 @@ const Home = () => {
           </Link>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
           {BLOG_POSTS.map((post, index) => (
             <motion.div
               key={post.id}
@@ -256,10 +305,13 @@ const Home = () => {
                   alt={post.title}
                   referrerPolicy="no-referrer"
                   className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105"
+                  loading="lazy"
                 />
                 <div className="absolute inset-0 border border-secondary/10 group-hover:border-gold/30 transition-colors duration-500 pointer-events-none" />
               </div>
-              <span className="text-gold text-[10px] uppercase tracking-widest block mb-4">{post.date}</span>
+              <span className="text-gold text-[10px] uppercase tracking-widest block mb-4">
+                {post.date}
+              </span>
               <h3 className="text-secondary text-xl font-serif mb-4 group-hover:text-gold transition-colors duration-300">
                 {post.title}
               </h3>
@@ -275,25 +327,27 @@ const Home = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-32 px-6 md:px-12">
+      <section className="py-16 md:py-32 px-6 md:px-12">
         <div className="max-w-5xl mx-auto bg-gold p-12 md:p-24 text-center relative overflow-hidden">
           <div className="absolute top-0 left-0 w-full h-full opacity-10">
-             <img 
-               src="https://images.unsplash.com/photo-1487958449943-2429e8be8625?auto=format&fit=crop&q=80&w=1200" 
-               alt="Pattern" 
-               className="w-full h-full object-cover"
-             />
+            <img
+              src="https://images.unsplash.com/photo-1487958449943-2429e8be8625?auto=format&fit=crop&q=80&w=1200"
+              alt="Pattern"
+              className="w-full h-full object-cover"
+              loading="lazy"
+            />
           </div>
           <div className="relative z-10">
             <h2 className="text-primary text-4xl md:text-6xl font-serif font-medium mb-8">
               Let’s Design Your <br /> Dream Space
             </h2>
             <p className="text-primary/70 text-lg mb-12 max-w-2xl mx-auto font-medium">
-              Ready to start your next architectural or interior project? Our team of experts is here to bring your vision to life.
+              Ready to start your next architectural or interior project? Our
+              team of experts is here to bring your vision to life.
             </p>
             <Link
               to="/contact"
-              className="bg-primary text-beige px-12 py-5 text-sm uppercase tracking-widest font-bold hover:bg-white hover:text-primary transition-all duration-500 inline-block"
+              className="bg-primary text-secondary px-12 py-5 text-sm uppercase tracking-widest font-bold hover:bg-secondary hover:text-primary transition-all duration-500 inline-block"
             >
               Start a Conversation
             </Link>

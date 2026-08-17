@@ -23,6 +23,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
         alt={project.name}
         referrerPolicy="no-referrer"
         className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 opacity-70 group-hover:opacity-90"
+        loading="lazy"
       />
       
       <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/20 to-transparent p-8 flex flex-col justify-end">

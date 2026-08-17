@@ -1,7 +1,7 @@
 import { Project, Service, Testimonial, BlogPost } from './types';
-import akash_apartment from '../src/assets/Akash_apartment.jpg'
-import EXL from '../src/assets/EXL.jpg'
-import Anaisha_Girls_hostel from '../src/assets/Anaisha_Girls_hostel.png'
+import akash_apartment from '../src/assets/Akash_apartment.webp'
+import EXL from '../src/assets/EXL.webp'
+import Anaisha_Girls_hostel from '../src/assets/Anaisha_Girls_hostel.webp'
 
 export const PROJECTS: Project[] = [
   {
@@ -22,9 +22,9 @@ export const PROJECTS: Project[] = [
   },
   {
     id: '2',
-    name: 'IT Comapany',
+    name: 'IT Company',
     location: 'Noida, Delhi NCR',
-    type: 'Corporate Interior',
+    type: 'Commercial',
     image: EXL,
     description: 'A state-of-the-art office space designed for a tech giant. The project emphasizes ergonomic design and collaborative work environments.',
     areaSize: '12,000 sq. ft.',
@@ -192,6 +192,6 @@ export const FAQS = [
   },
   {
     question: 'Do you provide turnkey services?',
-    answer: 'Yes, we offer end-to-end turnkey solutions where we manage everything from design to procurement and construction and Had over the Master Key'
+    answer: 'Yes, we offer end-to-end turnkey solutions where we manage everything from design to procurement and construction and Hand over the Master Key'
   }
 ];
