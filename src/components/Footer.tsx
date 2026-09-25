@@ -123,18 +123,18 @@ const Footer = () => {
             } md:flex`}
           >
             {[
-              "Architectural Design",
-              "Interior Design",
-              "Turnkey Projects",
-              "3D Visualization",
-              "Renovation",
+              { name: "Architectural Design", path: "/architectural-design" },
+              { name: "Interior Design", path: "/interior-design" },
+              { name: "Turnkey Projects", path: "/turnkey-projects" },
+              { name: "3D Visualization", path: "/3d-visualization" },
+              { name: "Renovation", path: "/renovation" },
             ].map((item) => (
-              <li key={item}>
+              <li key={item.name}>
                 <Link
-                  to="/services"
+                  to={item.path}
                   className="text-secondary/60 hover:text-gold transition-colors duration-300 text-sm uppercase tracking-wider"
                 >
-                  {item}
+                  {item.name}
                 </Link>
               </li>
             ))}
@@ -155,13 +155,21 @@ const Footer = () => {
             </li>
             <li className="flex items-center gap-4">
               <Phone className="text-gold shrink-0" size={20} />
-              <span className="text-secondary/60 text-sm">+91-9667641294</span>
+              <a
+                href="tel:+919667641294"
+                className="text-secondary text-lg font-serif hover:text-gold transition-colors"
+              >
+                +91-9667641294
+              </a>
             </li>
             <li className="flex items-center gap-4">
               <Mail className="text-gold shrink-0" size={20} />
-              <span className="text-secondary/60 text-sm">
+              <a
+                href="mailto:info@asquarestudios.com"
+                className="text-secondary text-lg font-serif hover:text-gold transition-colors"
+              >
                 info@asquarestudios.com
-              </span>
+              </a>
             </li>
           </ul>
         </div>

@@ -1,15 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://asquarestudios.com/</loc><priority>1.0</priority></url>
-  <url><loc>https://asquarestudios.com/about</loc><priority>0.8</priority></url>
-  <url><loc>https://asquarestudios.com/services</loc><priority>0.8</priority></url>
-  <url><loc>https://asquarestudios.com/projects</loc><priority>0.8</priority></url>
-  <url><loc>https://asquarestudios.com/projects/1</loc><priority>0.6</priority></url>
-  <url><loc>https://asquarestudios.com/projects/2</loc><priority>0.6</priority></url>
-  <url><loc>https://asquarestudios.com/projects/3</loc><priority>0.6</priority></url>
-  <url><loc>https://asquarestudios.com/projects/4</loc><priority>0.6</priority></url>
-  <url><loc>https://asquarestudios.com/blog</loc><priority>0.7</priority></url>
-  <url><loc>https://asquarestudios.com/contact</loc><priority>0.7</priority></url>
-  <url><loc>https://asquarestudios.com/privacy-policy</loc><priority>0.3</priority></url>
-<url><loc>https://asquarestudios.com/terms-of-service</loc><priority>0.3</priority></url>
+  <url><loc>https://asquarestudios.com/</loc></url>
+  <url><loc>https://asquarestudios.com/about</loc></url>
+  <url><loc>https://asquarestudios.com/services</loc></url>
+  <url><loc>https://asquarestudios.com/projects</loc></url>
+  <url><loc>https://asquarestudios.com/projects/akash-apartment</loc></url>
+  <url><loc>https://asquarestudios.com/projects/it-company-noida</loc></url>
+  <url><loc>https://asquarestudios.com/projects/minimalist-loft</loc></url>
+  <url><loc>https://asquarestudios.com/projects/anaisha-girls-hostel</loc></url>
+  <url><loc>https://asquarestudios.com/blog</loc></url>
+  <url><loc>https://asquarestudios.com/contact</loc></url>
+  <url><loc>https://asquarestudios.com/privacy-policy</loc></url>
+  <url><loc>https://asquarestudios.com/farmhouse-architecture</loc></url>
+  <url><loc>https://asquarestudios.com/corporate-office-design</loc></url>
+  <url><loc>https://asquarestudios.com/terms-of-service</loc></url>
+  <url><loc>https://asquarestudios.com/showroom-design</loc></url>
+  <url><loc>https://asquarestudios.com/restaurant-cafe-design</loc></url>
+  <url><loc>https://asquarestudios.com/commercial-architecture</loc></url>
+  <url><loc>https://asquarestudios.com/turnkey-projects</loc></url>
+  <url><loc>https://asquarestudios.com/interior-design</loc></url>
+  <url><loc>https://asquarestudios.com/architectural-design</loc></url>
+  <url><loc>https://asquarestudios.com/renovation</loc></url>
+  <url><loc>https://asquarestudios.com/3d-visualization</loc></url>
 </urlset>

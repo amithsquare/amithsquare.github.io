@@ -40,7 +40,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
           </div>
           
           <Link
-            to={`/projects/${project.id}`}
+            to={`/projects/${project.slug}`}
             className="mt-6 flex items-center gap-2 text-secondary text-xs uppercase tracking-widest font-bold opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100"
           >
             View Project <ArrowRight size={16} className="text-gold" />

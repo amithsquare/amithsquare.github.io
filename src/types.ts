@@ -1,5 +1,6 @@
 export interface Project {
   id: string;
+  slug: string;
   name: string;
   location: string;
   type:
@@ -7,7 +8,7 @@ export interface Project {
     | "Commercial"
     | "Interior"
     | "Renovation"
-    | "Corporate Interior";
+    | "Farmhouse";
   image: string;
   description: string;
   areaSize: string;

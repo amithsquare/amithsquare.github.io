@@ -14,12 +14,11 @@ const Home = () => {
     <div className="bg-background homepage w-full min-w-0">
       <Helmet>
         <title>
-          A Square Studio | Architecture & Interior Design in New Delhi, Gwalior
-          & Indore
+          A Square Studio | Architects, Interior & Farmhouse Design in India
         </title>
         <meta
           name="description"
-          content="A Square Studio delivers innovative architectural and interior design solutions across New Delhi, Gwalior & Indore - blending creativity, functionality, and elegance."
+          content="A Square Studio provides architectural design, interior design, farmhouse architecture and turnkey project solutions across India, with a focus on New Delhi, Gwalior and Indore."
         />
         <meta
           property="og:title"
@@ -37,7 +36,18 @@ const Home = () => {
         />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
-        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:title"
+          content="Architectural Design Services | A Square Studio"
+        />
+        <meta
+          name="twitter:description"
+          content="Architectural design, planning, drawings, visualization, and execution coordination from A Square Studio."
+        />
+        <meta
+          name="twitter:image"
+          content="https://asquarestudios.com/og-image.jpg"
+        />
         <meta
           name="twitter:title"
           content="A Square Studio | Architecture & Interior Design"
@@ -91,8 +101,9 @@ const Home = () => {
             transition={{ duration: 1, delay: 0.6 }}
             className="text-secondary/70 text-base md:text-lg max-w-2xl mx-auto mb-12 leading-relaxed"
           >
-            A Square Studio delivers innovative architectural and interior
-            solutions that blend creativity, functionality, and elegance.
+            A Square Studio delivers architectural, interior and turnkey design
+            solutions for residential, commercial and farmhouse projects across
+            India.
           </motion.p>
 
           <motion.div

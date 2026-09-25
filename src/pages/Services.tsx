@@ -1,8 +1,10 @@
+import { ArrowRight } from "lucide-react";
 import { motion } from "motion/react"; // Changed from 'motion/react' to 'framer-motion' to match your About page
 import { Helmet } from "react-helmet-async";
+import { Link } from "react-router-dom";
 import SectionHeading from "../components/SectionHeading";
 import { SERVICES } from "../constants";
-
+const slugify = (title: string) => title.toLowerCase().replace(/\s+/g, "-");
 const Services = () => {
   return (
     <div className="pt-16 md:pt-32 bg-background">
@@ -12,7 +14,7 @@ const Services = () => {
         </title>
         <meta
           name="description"
-          content="Architectural design, interior design, turnkey projects, 3D visualization, and renovation services from A Square Studio, serving North India."
+          content="Architectural design, interior design, turnkey projects, 3D visualization, and renovation services from A Square Studio, serving clients across India."
         />
         <link rel="canonical" href="https://asquarestudios.com/services" />
       </Helmet>
@@ -36,11 +38,12 @@ const Services = () => {
           {SERVICES.map((service, index) => (
             <motion.div
               key={service.id}
+              id={slugify(service.title)}
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 1 }}
-              className={`grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-20 items-center 
+              className={`grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-20 items-center scroll-mt-32
               ${index % 2 !== 0 ? "lg:flex-row-reverse" : ""}`}
             >
               {/* Image Section */}
@@ -89,6 +92,51 @@ const Services = () => {
                   ))}
                 </ul>
 
+                {service.title === "Interior Design" && (
+                  <Link
+                    to="/interior-design"
+                    className="inline-flex items-center gap-2 text-gold text-xs uppercase tracking-widest font-bold mb-8 mr-3"
+                  >
+                    Explore Interior Design <ArrowRight size={14} />
+                  </Link>
+                )}
+
+                {service.title === "Turnkey Projects" && (
+                  <Link
+                    to="/turnkey-projects"
+                    className="inline-flex items-center gap-2 text-gold text-xs uppercase tracking-widest font-bold mb-8 mr-3"
+                  >
+                    Explore Turnkey Projects <ArrowRight size={14} />
+                  </Link>
+                )}
+
+                {service.title === "Architectural Design" && (
+                  <Link
+                    to="/architectural-design"
+                    className="inline-flex items-center gap-2 text-gold text-xs uppercase tracking-widest font-bold mb-8 mr-3"
+                  >
+                    Explore Architectural Design <ArrowRight size={14} />
+                  </Link>
+                )}
+
+                {service.title === "Renovation & Remodeling" && (
+                  <Link
+                    to="/renovation"
+                    className="inline-flex items-center gap-2 text-gold text-xs uppercase tracking-widest font-bold mb-8 mr-3"
+                  >
+                    Explore Renovation & Remodeling <ArrowRight size={14} />
+                  </Link>
+                )}
+
+                {service.title === "3D Visualization" && (
+                  <Link
+                    to="/3d-visualization"
+                    className="inline-flex items-center gap-2 text-gold text-xs uppercase tracking-widest font-bold mb-8 mr-3"
+                  >
+                    Explore 3D Visualization <ArrowRight size={14} />
+                  </Link>
+                )}
+
                 {/* Inquire Now Button */}
                 <a
                   href="https://docs.google.com/forms/d/e/1FAIpQLScwxwgGc_8LkwLv7JQMRNa94slMZcJ5oQWmSBYTcobMAMGkbA/viewform"
@@ -101,6 +149,143 @@ const Services = () => {
               </div>
             </motion.div>
           ))}
+        </div>
+      </section>
+      {/* Sector-Specific Services */}
+      <section className="py-16 md:py-32 px-6 md:px-12 bg-background">
+        <div className="max-w-7xl mx-auto">
+          <SectionHeading
+            subtitle="Explore Our Work"
+            title="Sector-Specific Design Services"
+            centered
+          />
+
+          <p className="text-secondary/60 text-lg leading-relaxed max-w-3xl mx-auto text-center mb-12 md:mb-16">
+            Explore our architecture, interior design, and turnkey solutions for
+            different project types and spaces.
+          </p>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+            <Link
+              to="/farmhouse-architecture"
+              className="group bg-secondary/5 border border-secondary/10 p-8 hover:border-gold/30 transition-all duration-300 flex flex-col gap-4"
+            >
+              <span className="text-secondary text-xl font-serif group-hover:text-gold transition-colors">
+                Farmhouse Architecture & Turnkey
+              </span>
+              <span className="flex items-center gap-2 text-gold text-xs uppercase tracking-widest font-bold">
+                Explore Service <ArrowRight size={14} />
+              </span>
+            </Link>
+
+            <Link
+              to="/corporate-office-design"
+              className="group bg-secondary/5 border border-secondary/10 p-8 hover:border-gold/30 transition-all duration-300 flex flex-col gap-4"
+            >
+              <span className="text-secondary text-xl font-serif group-hover:text-gold transition-colors">
+                Corporate Office Architecture & Interior
+              </span>
+              <span className="flex items-center gap-2 text-gold text-xs uppercase tracking-widest font-bold">
+                Explore Service <ArrowRight size={14} />
+              </span>
+            </Link>
+
+            <Link
+              to="/showroom-design"
+              className="group bg-secondary/5 border border-secondary/10 p-8 hover:border-gold/30 transition-all duration-300 flex flex-col gap-4"
+            >
+              <span className="text-secondary text-xl font-serif group-hover:text-gold transition-colors">
+                Showroom Architecture & Interior
+              </span>
+              <span className="flex items-center gap-2 text-gold text-xs uppercase tracking-widest font-bold">
+                Explore Service <ArrowRight size={14} />
+              </span>
+            </Link>
+
+            <Link
+              to="/restaurant-cafe-design"
+              className="group bg-secondary/5 border border-secondary/10 p-8 hover:border-gold/30 transition-all duration-300 flex flex-col gap-4"
+            >
+              <span className="text-secondary text-xl font-serif group-hover:text-gold transition-colors">
+                Restaurant & Cafe Architecture & Interior
+              </span>
+              <span className="flex items-center gap-2 text-gold text-xs uppercase tracking-widest font-bold">
+                Explore Service <ArrowRight size={14} />
+              </span>
+            </Link>
+
+            <Link
+              to="/commercial-architecture"
+              className="group bg-secondary/5 border border-secondary/10 p-8 hover:border-gold/30 transition-all duration-300 flex flex-col gap-4"
+            >
+              <span className="text-secondary text-xl font-serif group-hover:text-gold transition-colors">
+                Commercial Architecture & Interior
+              </span>
+              <span className="flex items-center gap-2 text-gold text-xs uppercase tracking-widest font-bold">
+                Explore Service <ArrowRight size={14} />
+              </span>
+            </Link>
+
+            <Link
+              to="/turnkey-projects"
+              className="group bg-secondary/5 border border-secondary/10 p-8 hover:border-gold/30 transition-all duration-300 flex flex-col gap-4"
+            >
+              <span className="text-secondary text-xl font-serif group-hover:text-gold transition-colors">
+                Turnkey Architecture, Interior Design & Execution
+              </span>
+              <span className="flex items-center gap-2 text-gold text-xs uppercase tracking-widest font-bold">
+                Explore Service <ArrowRight size={14} />
+              </span>
+            </Link>
+
+            <Link
+              to="/interior-design"
+              className="group bg-secondary/5 border border-secondary/10 p-8 hover:border-gold/30 transition-all duration-300 flex flex-col gap-4"
+            >
+              <span className="text-secondary text-xl font-serif group-hover:text-gold transition-colors">
+                Interior Design Services
+              </span>
+              <span className="flex items-center gap-2 text-gold text-xs uppercase tracking-widest font-bold">
+                Explore Service <ArrowRight size={14} />
+              </span>
+            </Link>
+
+            <Link
+              to="/architectural-design"
+              className="group bg-secondary/5 border border-secondary/10 p-8 hover:border-gold/30 transition-all duration-300 flex flex-col gap-4"
+            >
+              <span className="text-secondary text-xl font-serif group-hover:text-gold transition-colors">
+                Architectural Design Services
+              </span>
+              <span className="flex items-center gap-2 text-gold text-xs uppercase tracking-widest font-bold">
+                Explore Service <ArrowRight size={14} />
+              </span>
+            </Link>
+
+            <Link
+              to="/renovation"
+              className="group bg-secondary/5 border border-secondary/10 p-8 hover:border-gold/30 transition-all duration-300 flex flex-col gap-4"
+            >
+              <span className="text-secondary text-xl font-serif group-hover:text-gold transition-colors">
+                Renovation & Remodeling Services
+              </span>
+              <span className="flex items-center gap-2 text-gold text-xs uppercase tracking-widest font-bold">
+                Explore Service <ArrowRight size={14} />
+              </span>
+            </Link>
+
+            <Link
+              to="/3d-visualization"
+              className="group bg-secondary/5 border border-secondary/10 p-8 hover:border-gold/30 transition-all duration-300 flex flex-col gap-4"
+            >
+              <span className="text-secondary text-xl font-serif group-hover:text-gold transition-colors">
+                3D Architectural Visualization & Rendering
+              </span>
+              <span className="flex items-center gap-2 text-gold text-xs uppercase tracking-widest font-bold">
+                Explore Service <ArrowRight size={14} />
+              </span>
+            </Link>
+          </div>
         </div>
       </section>
     </div>

@@ -44,6 +44,8 @@ const Contact = () => {
           phone: formData.phone,
           message: formData.message,
           time: new Date().toLocaleString(),
+          page: window.location.pathname,
+          source: document.referrer || "Direct",
         },
         { publicKey: EMAILJS_PUBLIC_KEY },
       );
@@ -119,9 +121,12 @@ const Contact = () => {
                   <span className="text-secondary/40 text-[10px] uppercase tracking-widest mb-1">
                     Call Us
                   </span>
-                  <span className="text-secondary text-lg font-serif">
+                  <a
+                    href="tel:+919667641294"
+                    className="text-secondary text-lg font-serif hover:text-gold transition-colors"
+                  >
                     +91-9667641294
-                  </span>
+                  </a>
                 </div>
               </div>
               <div className="flex items-start gap-6 group">
@@ -135,9 +140,12 @@ const Contact = () => {
                   <span className="text-secondary/40 text-[10px] uppercase tracking-widest mb-1">
                     Email Us
                   </span>
-                  <span className="text-secondary text-lg font-serif">
+                  <a
+                    href="mailto:info@asquarestudios.com"
+                    className="text-secondary text-lg font-serif hover:text-gold transition-colors"
+                  >
                     info@asquarestudios.com
-                  </span>
+                  </a>
                 </div>
               </div>
             </div>
@@ -275,7 +283,7 @@ const Contact = () => {
       <section className="py-16 md:py-32 px-6 md:px-12 max-w-5xl mx-auto text-center">
         <SectionHeading
           subtitle="Where We Work"
-          title="Serving Clients Across North India"
+          title="Serving Clients Across India"
           centered
         />
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8 md:mt-12">

@@ -9,18 +9,17 @@ import {
 import { motion } from "motion/react";
 import { useEffect } from "react";
 import { Helmet } from "react-helmet-async";
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import SectionHeading from "../components/SectionHeading";
 import { PROJECTS } from "../constants";
 
 const ProjectDetail = () => {
-  const { id } = useParams();
-  const navigate = useNavigate();
-  const project = PROJECTS.find((p) => p.id === id);
+  const { slug } = useParams();
+  const project = PROJECTS.find((p) => p.slug === slug);
 
   useEffect(() => {
     window.scrollTo(0, 0);
-  }, [id]);
+  }, [slug]);
 
   if (!project) {
     return (
@@ -38,10 +37,13 @@ const ProjectDetail = () => {
     );
   }
 
-  const nextProject = PROJECTS.find((p) => p.id !== id);
+  const currentIndex = PROJECTS.findIndex((p) => p.slug === slug);
+
+  const nextProject =
+    currentIndex >= 0 ? PROJECTS[(currentIndex + 1) % PROJECTS.length] : null;
 
   return (
-    <div className="pt-32 bg-background min-h-screen">
+    <div className="pt-52 bg-background min-h-screen">
       <Helmet>
         <title>
           {project.name} | {project.type} Project | A Square Studio
@@ -52,7 +54,7 @@ const ProjectDetail = () => {
         />
         <link
           rel="canonical"
-          href={`https://asquarestudios.com/projects/${project.id}`}
+          href={`https://asquarestudios.com/projects/${project.slug}`}
         />
       </Helmet>
       {/* Header */}
@@ -195,7 +197,7 @@ const ProjectDetail = () => {
               Next Project
             </span>
             <Link
-              to={`/projects/${nextProject.id}`}
+              to={`/projects/${nextProject.slug}`}
               className="group inline-block"
             >
               <h2 className="text-secondary text-4xl md:text-6xl font-serif font-medium mb-8 group-hover:text-gold transition-colors duration-300">
