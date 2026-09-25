@@ -23,6 +23,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
         alt={project.name}
         referrerPolicy="no-referrer"
         className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 opacity-70 group-hover:opacity-90"
+        loading="lazy"
       />
       
       <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/20 to-transparent p-8 flex flex-col justify-end">
@@ -39,7 +40,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
           </div>
           
           <Link
-            to={`/projects/${project.id}`}
+            to={`/projects/${project.slug}`}
             className="mt-6 flex items-center gap-2 text-secondary text-xs uppercase tracking-widest font-bold opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100"
           >
             View Project <ArrowRight size={16} className="text-gold" />

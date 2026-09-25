@@ -1,100 +1,185 @@
-import React, { useState } from 'react';
-import { motion } from 'motion/react';
-import { Mail, Phone, MapPin, Send, Instagram, Facebook, Linkedin, MessageSquare } from 'lucide-react';
-import SectionHeading from '../components/SectionHeading';
-import { FAQS } from '../constants';
+import emailjs from "@emailjs/browser";
+import { Helmet } from "react-helmet-async";
+
+import {
+  Facebook,
+  Instagram,
+  Linkedin,
+  Mail,
+  MapPin,
+  Phone,
+  Send,
+} from "lucide-react";
+import { motion } from "motion/react";
+import React, { useState } from "react";
+import SectionHeading from "../components/SectionHeading";
+import { FAQS } from "../constants";
+
+const EMAILJS_SERVICE_ID = "service_2a5iwdm";
+const EMAILJS_TEMPLATE_ID = "template_dqjferh";
+const EMAILJS_PUBLIC_KEY = "8fd8pi01yZWaaz_s1";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    message: '',
+    name: "",
+    email: "",
+    phone: "",
+    message: "",
   });
+  const [status, setStatus] = useState<
+    "idle" | "sending" | "success" | "error"
+  >("idle");
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // In a real app, this would send the data to a server
-    alert('Thank you for your message! Our team will get back to you shortly.');
-    setFormData({ name: '', email: '', phone: '', message: '' });
+    setStatus("sending");
+
+    try {
+      await emailjs.send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        {
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          message: formData.message,
+          time: new Date().toLocaleString(),
+          page: window.location.pathname,
+          source: document.referrer || "Direct",
+        },
+        { publicKey: EMAILJS_PUBLIC_KEY },
+      );
+      setStatus("success");
+      setFormData({ name: "", email: "", phone: "", message: "" });
+    } catch (err) {
+      console.error("EmailJS send failed:", err);
+      setStatus("error");
+    }
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+  ) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   return (
-    <div className="pt-32 bg-background min-h-screen">
+    <div className="pt-16 md:pt-32 bg-background min-h-screen">
+      <Helmet>
+        <title>Contact Us | A Square Studio</title>
+        <meta
+          name="description"
+          content="Get in touch with A Square Studio for architectural and interior design consultations across New Delhi, Gwalior & Indore."
+        />
+        <link rel="canonical" href="https://asquarestudios.com/contact" />
+      </Helmet>
       {/* Hero */}
-      <section className="px-6 md:px-12 max-w-7xl mx-auto mb-32 mt-18">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-end">
+      <section className="px-6 md:px-12 max-w-7xl mx-auto mb-16 md:mb-32 mt-18">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-20 items-end">
           <SectionHeading
             subtitle="Get In Touch"
             title="Let’s Design Your Dream Space"
           />
-          <p className="text-secondary/60 text-lg leading-relaxed mb-12">
-            Ready to start your next architectural or interior project? Our team of experts is here to bring your vision to life. Reach out to us for a consultation.
+          <p className="text-secondary/60 text-lg leading-relaxed mb-8 md:mb-12">
+            Ready to start your next architectural or interior project? Our team
+            of experts is here to bring your vision to life. Reach out to us for
+            a consultation.
           </p>
         </div>
       </section>
 
       {/* Contact Grid */}
-      <section className="py-32 bg-primary/30">
-        <div className="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-3 gap-20">
+      <section className="py-16 md:py-32 bg-primary/30">
+        <div className="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-3 gap-12 md:gap-20">
           {/* Contact Info */}
-          <div className="lg:col-span-1 flex flex-col gap-12">
-            <div className="flex flex-col gap-8">
+          <div className="lg:col-span-1 flex flex-col gap-8 md:gap-12">
+            <div className="flex flex-col gap-6 md:gap-8">
               <div className="flex items-start gap-6 group">
                 <div className="w-14 h-14 bg-gold/10 flex items-center justify-center border border-gold/20 group-hover:bg-gold transition-all duration-500">
-                  <MapPin className="text-gold group-hover:text-primary" size={24} />
+                  <MapPin
+                    className="text-gold group-hover:text-primary"
+                    size={24}
+                  />
                 </div>
                 <div className="flex flex-col">
-                  <span className="text-secondary/40 text-[10px] uppercase tracking-widest mb-1">Our Studio</span>
-                  <span className="text-secondary text-lg font-serif">A Square Studio, New Delhi, India</span>
+                  <span className="text-secondary/40 text-[10px] uppercase tracking-widest mb-1">
+                    Where We Work
+                  </span>
+                  <span className="text-secondary text-lg font-serif">
+                    Serving New Delhi, Gwalior &amp; Indore
+                  </span>
                 </div>
               </div>
               <div className="flex items-start gap-6 group">
                 <div className="w-14 h-14 bg-gold/10 flex items-center justify-center border border-gold/20 group-hover:bg-gold transition-all duration-500">
-                  <Phone className="text-gold group-hover:text-primary" size={24} />
+                  <Phone
+                    className="text-gold group-hover:text-primary"
+                    size={24}
+                  />
                 </div>
                 <div className="flex flex-col">
-                  <span className="text-secondary/40 text-[10px] uppercase tracking-widest mb-1">Call Us</span>
-                  <span className="text-secondary text-lg font-serif">+91-9667641294</span>
+                  <span className="text-secondary/40 text-[10px] uppercase tracking-widest mb-1">
+                    Call Us
+                  </span>
+                  <a
+                    href="tel:+919667641294"
+                    className="text-secondary text-lg font-serif hover:text-gold transition-colors"
+                  >
+                    +91-9667641294
+                  </a>
                 </div>
               </div>
               <div className="flex items-start gap-6 group">
                 <div className="w-14 h-14 bg-gold/10 flex items-center justify-center border border-gold/20 group-hover:bg-gold transition-all duration-500">
-                  <Mail className="text-gold group-hover:text-primary" size={24} />
+                  <Mail
+                    className="text-gold group-hover:text-primary"
+                    size={24}
+                  />
                 </div>
                 <div className="flex flex-col">
-                  <span className="text-secondary/40 text-[10px] uppercase tracking-widest mb-1">Email Us</span>
-                  <span className="text-secondary text-lg font-serif">info@asquarestudios.com</span>
+                  <span className="text-secondary/40 text-[10px] uppercase tracking-widest mb-1">
+                    Email Us
+                  </span>
+                  <a
+                    href="mailto:info@asquarestudios.com"
+                    className="text-secondary text-lg font-serif hover:text-gold transition-colors"
+                  >
+                    info@asquarestudios.com
+                  </a>
                 </div>
               </div>
             </div>
 
-            <div className="pt-12 border-t border-secondary/10">
-              <h4 className="text-secondary text-xl font-serif mb-6">Follow Our Journey</h4>
+            <div className="pt-8 md:pt-12 border-t border-secondary/10">
+              <h4 className="text-secondary text-xl font-serif mb-6">
+                Follow Our Journey
+              </h4>
               <div className="flex items-center gap-4">
-                <a href="https://www.instagram.com/aasquarestudio/" className="w-12 h-12 rounded-full border border-secondary/10 flex items-center justify-center hover:bg-gold hover:text-primary transition-all duration-300">
+                <a
+                  href="https://www.instagram.com/aasquarestudios/"
+                  className="w-12 h-12 rounded-full border border-secondary/10 flex items-center justify-center hover:bg-gold hover:text-primary transition-all duration-300"
+                >
                   <Instagram size={20} />
                 </a>
-                <a href="https://www.facebook.com/asquarestudioindia" className="w-12 h-12 rounded-full border border-secondary/10 flex items-center justify-center hover:bg-gold hover:text-primary transition-all duration-300">
+                <a
+                  href="https://www.facebook.com/asquarestudioindia"
+                  className="w-12 h-12 rounded-full border border-secondary/10 flex items-center justify-center hover:bg-gold hover:text-primary transition-all duration-300"
+                >
                   <Facebook size={20} />
                 </a>
-                <a href="https://www.linkedin.com/in/a-square-studio-62870435b/" className="w-12 h-12 rounded-full border border-secondary/10 flex items-center justify-center hover:bg-gold hover:text-primary transition-all duration-300">
+                <a
+                  href="https://linkedin.com/company/a-square-studio"
+                  className="w-12 h-12 rounded-full border border-secondary/10 flex items-center justify-center hover:bg-gold hover:text-primary transition-all duration-300"
+                >
                   <Linkedin size={20} />
                 </a>
-                {/* <a href="#" className="w-12 h-12 rounded-full border border-secondary/10 flex items-center justify-center hover:bg-gold hover:text-primary transition-all duration-300">
-                  <MessageSquare size={20} />
-                </a> */}
               </div>
             </div>
-            
+
             {/* WhatsApp Integration */}
-            <a 
-              href="https://wa.me/919667241294" 
-              target="_blank" 
+            <a
+              href="https://wa.me/919667641294"
+              target="_blank"
               rel="noopener noreferrer"
               className="mt-8 bg-[#25D366] text-white px-8 py-4 text-xs uppercase tracking-widest font-bold hover:opacity-90 transition-all duration-300 flex items-center justify-center gap-3"
             >
@@ -104,10 +189,17 @@ const Contact = () => {
 
           {/* Contact Form */}
           <div className="lg:col-span-2 bg-secondary/5 border border-secondary/10 p-10 md:p-16">
-            <h3 className="text-secondary text-3xl font-serif mb-12">Send Us a Message</h3>
-            <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <h3 className="text-secondary text-3xl font-serif mb-8 md:mb-12">
+              Send Us a Message
+            </h3>
+            <form
+              onSubmit={handleSubmit}
+              className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8"
+            >
               <div className="flex flex-col gap-2">
-                <label className="text-secondary/40 text-[10px] uppercase tracking-widest font-bold">Full Name</label>
+                <label className="text-secondary/40 text-[10px] uppercase tracking-widest font-bold">
+                  Full Name
+                </label>
                 <input
                   type="text"
                   name="name"
@@ -119,7 +211,9 @@ const Contact = () => {
                 />
               </div>
               <div className="flex flex-col gap-2">
-                <label className="text-secondary/40 text-[10px] uppercase tracking-widest font-bold">Email Address</label>
+                <label className="text-secondary/40 text-[10px] uppercase tracking-widest font-bold">
+                  Email Address
+                </label>
                 <input
                   type="email"
                   name="email"
@@ -131,7 +225,9 @@ const Contact = () => {
                 />
               </div>
               <div className="flex flex-col gap-2 md:col-span-2">
-                <label className="text-secondary/40 text-[10px] uppercase tracking-widest font-bold">Phone Number</label>
+                <label className="text-secondary/40 text-[10px] uppercase tracking-widest font-bold">
+                  Phone Number
+                </label>
                 <input
                   type="tel"
                   name="phone"
@@ -142,7 +238,9 @@ const Contact = () => {
                 />
               </div>
               <div className="flex flex-col gap-2 md:col-span-2">
-                <label className="text-secondary/40 text-[10px] uppercase tracking-widest font-bold">Your Message</label>
+                <label className="text-secondary/40 text-[10px] uppercase tracking-widest font-bold">
+                  Your Message
+                </label>
                 <textarea
                   name="message"
                   value={formData.message}
@@ -153,71 +251,62 @@ const Contact = () => {
                   placeholder="Tell us about your project..."
                 />
               </div>
-              <div className="md:col-span-2 pt-8">
+              <div className="md:col-span-2 pt-4 md:pt-8 flex flex-col gap-4">
                 <button
                   type="submit"
-                  className="bg-gold text-primary px-12 py-5 text-sm uppercase tracking-widest font-bold hover:bg-secondary transition-all duration-500 flex items-center gap-3"
+                  disabled={status === "sending"}
+                  className="bg-gold text-primary px-12 py-5 text-sm uppercase tracking-widest font-bold hover:bg-secondary transition-all duration-500 flex items-center gap-3 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  Send Message <Send size={18} />
+                  {status === "sending" ? "Sending..." : "Send Message"}{" "}
+                  <Send size={18} />
                 </button>
+
+                {status === "success" && (
+                  <p className="text-green-500 text-sm">
+                    Thank you! Your message has been sent - we'll get back to
+                    you shortly.
+                  </p>
+                )}
+                {status === "error" && (
+                  <p className="text-red-500 text-sm">
+                    Something went wrong sending your message. Please try again,
+                    or reach us directly on WhatsApp/phone.
+                  </p>
+                )}
               </div>
             </form>
           </div>
         </div>
       </section>
 
-      {/* Map Placeholder */}
-      <section className="h-[500px] w-full bg-primary/50 relative overflow-hidden">
-  <div className="absolute inset-0 grayscale opacity-40">
-    <img 
-      src="/src/assets/A_Square_Studio_Map_Placeholder.png" 
-      alt="Map Placeholder" 
-      className="w-full h-full object-cover"
-    />
-  </div>
-
-  <div className="absolute inset-0 bg-primary/20" />
-
-  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center z-10">
-    
-    {/* CLICKABLE LOCATION ICON */}
-    <a
-      href="https://www.google.com/maps/dir/Anaisha+girls+hostel,+B-10,+Samarth+Nagar,+Deen+Dayal+Nagar,+Gwalior,+Madhya+Pradesh+474005/Anaisha+girls+hostel,+B-10,+Samarth+Nagar,+Deen+Dayal+Nagar,+Gwalior,+Madhya+Pradesh+474005/@28.491776,77.1424256,5243m/data=!3m2!1e3!4b1!4m13!4m12!1m5!1m1!1s0x3976c1f0731b37e1:0xf3d98d42af1cd3f6!2m2!1d78.2146025!2d26.252943!1m5!1m1!1s0x3976c1f0731b37e1:0xf3d98d42af1cd3f6!2m2!1d78.2146025!2d26.252943?entry=ttu&g_ep=EgoyMDI2MDQwNy4wIKXMDSoASAFQAw%3D%3D"
-      target="_blank"
-      rel="noopener noreferrer"
-      aria-label="Open location in Google Maps"
-    >
-      <div className="w-20 h-20 bg-gold/20 backdrop-blur-xl border border-gold/50 rounded-full flex items-center justify-center mx-auto mb-6 animate-pulse hover:scale-110 transition cursor-pointer">
-        
-        <MapPin className="text-gold" size={40} />
-
-      </div>
-    </a>
-
-    <h4 className="text-secondary text-3xl font-serif mb-2">
-      Our Gwalior Office
-    </h4>
-
-    <p className="text-secondary/60 text-sm uppercase tracking-widest">
-      Visit us for a consultation
-    
-<p className="text-secondary/60 text-sm uppercase tracking-widest">
-</p>
-
-      B-10 Samarth Nagar Airport Road Gwalior Madhya Pradesh 474005
-    </p>
-
-  </div>
-</section>
+      {/* Service Areas */}
+      <section className="py-16 md:py-32 px-6 md:px-12 max-w-5xl mx-auto text-center">
+        <SectionHeading
+          subtitle="Where We Work"
+          title="Serving Clients Across India"
+          centered
+        />
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8 md:mt-12">
+          {["New Delhi", "Gwalior", "Indore"].map((city) => (
+            <div
+              key={city}
+              className="flex flex-col items-center gap-4 p-8 bg-secondary/5 border border-secondary/10"
+            >
+              <MapPin className="text-gold" size={28} />
+              <span className="text-secondary text-xl font-serif">{city}</span>
+            </div>
+          ))}
+        </div>
+      </section>
 
       {/* FAQ Section */}
-      <section className="py-32 px-6 md:px-12 max-w-4xl mx-auto">
+      <section className="py-12 md:py-32 px-6 md:px-12 max-w-4xl mx-auto">
         <SectionHeading
           subtitle="Support"
           title="Frequently Asked Questions"
           centered
         />
-        <div className="flex flex-col gap-8">
+        <div className="flex flex-col gap-4 md:gap-8">
           {FAQS.map((faq, index) => (
             <motion.div
               key={index}
@@ -228,7 +317,9 @@ const Contact = () => {
               className="bg-secondary/5 border border-secondary/10 p-8 hover:border-gold/30 transition-all duration-300"
             >
               <h4 className="text-secondary text-xl font-serif mb-4 flex items-center gap-4">
-                <span className="text-gold font-mono text-sm">0{index + 1}</span>
+                <span className="text-gold font-mono text-sm">
+                  0{index + 1}
+                </span>
                 {faq.question}
               </h4>
               <p className="text-secondary/60 text-base leading-relaxed pl-10">
