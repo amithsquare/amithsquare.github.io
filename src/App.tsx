@@ -35,7 +35,7 @@ const TurnkeyProjects = lazy(() => import("./pages/TurnkeyProjects"));
 const InteriorDesign = lazy(() => import("./pages/InteriorDesign"));
 const ArchitecturalDesign = lazy(() => import("./pages/ArchitecturalDesign"));
 const Renovation = lazy(() => import("./pages/Renovation"));
-const Visualization3D = lazy(() => import("./pages/Visualization3D"));
+const Visualization3D = lazy(() => import("./pages/Visualization3d"));
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
