@@ -1,11 +1,12 @@
 import React from 'react';
 import { FaWhatsapp } from 'react-icons/fa';
 import { motion } from 'motion/react';
+import { buildWhatsAppUrl, WHATSAPP_MESSAGES } from "../lib/whatsapp";
 
 const FloatingWhatsApp = () => {
   return (
     <motion.a
-      href="https://wa.me/919667641294"
+      href={buildWhatsAppUrl(WHATSAPP_MESSAGES.general)}
       target="_blank"
       rel="noopener noreferrer"
       initial={{ scale: 0, opacity: 0 }}

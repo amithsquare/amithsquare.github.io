@@ -10,6 +10,8 @@ import { motion } from "motion/react";
 import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 import SectionHeading from "../components/SectionHeading";
+import WhatsAppCTA from "../components/WhatsAppCTA";
+ import { WHATSAPP_MESSAGES } from "../lib/whatsapp";
 
 const fadeIn = {
   initial: { opacity: 0, y: 30 },
@@ -501,12 +503,15 @@ const ShowroomDesign = () => {
             From architectural planning to turnkey execution, we're ready to
             talk through your showroom project.
           </p>
-          <Link
-            to="/contact"
-            className="bg-primary text-secondary px-12 py-5 text-sm uppercase tracking-widest font-bold hover:bg-secondary hover:text-primary transition-all duration-500 inline-block"
-          >
-            Start a Conversation
-          </Link>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6">
+            <WhatsAppCTA message={WHATSAPP_MESSAGES.showroom} variant="dark" />
+            <Link
+              to="/contact"
+              className="border border-primary/70 text-primary px-10 py-4 text-xs uppercase tracking-widest font-bold hover:bg-primary hover:text-secondary transition-all duration-500"
+            >
+              Get in Touch
+            </Link>
+          </div>
         </div>
       </section>
     </div>
