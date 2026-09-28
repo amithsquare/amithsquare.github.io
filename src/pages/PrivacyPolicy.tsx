@@ -112,7 +112,7 @@ const PrivacyPolicy = () => {
               The Site uses cookies primarily through Google Analytics and
               Google Ads to understand visitor behavior and measure ad
               performance. You can disable cookies through your browser
-              settings, though some parts of the Site may not function as
+              settings,though some parts of the Site may not function as
               intended if you do so.
             </p>
           </div>
